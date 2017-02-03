@@ -23,4 +23,7 @@ require 'java_buildpack/buildpack'
 
 build_dir = ARGV[0]
 
+BIN_DIR=$(cd $(dirname $0); pwd) # absolute path
+${BIN_DIR}/collectd-install.sh ${BUILD_DIR}
+
 JavaBuildpack::Buildpack.with_buildpack(build_dir, 'Compile failed with exception %s', &:compile)
