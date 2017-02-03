@@ -25,10 +25,6 @@ build_dir = ARGV[0]
 
 install_collectd
 
-JavaBuildpack::Buildpack.with_buildpack(build_dir, 'Compile failed with exception %s', &:compile)
-
-private
-
 def install_collectd
   puts "Installing collectd"
 
@@ -36,3 +32,5 @@ def install_collectd
   # download ruby
   # install ruby
 end
+
+JavaBuildpack::Buildpack.with_buildpack(build_dir, 'Compile failed with exception %s', &:compile)
